@@ -166,7 +166,8 @@ body.page-template-page-fullsingle-me {
   max-width: 50%; }
   @media (max-width: 800px) {
     .bio {
-      max-width: none; } }
+      max-width: none; 
+     flex: 1 auto auto;} }
   .bio a {
     color: #CCCCCC;
 
@@ -175,6 +176,39 @@ body.page-template-page-fullsingle-me {
       color: #FFFFFF;
       transition: 0.1s; }
 
+.links {
+
+  position: fixed;
+
+
+  right: 5vw;
+  overflow-x: hidden;
+
+  display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+animation: fadein 4s;
+ letter-spacing: -1px;
+  max-width: 50%; 
+}
+
+  .links a {
+    color: #CCCCCC;
+
+    transition: 0.5s; }
+    .links a:hover {
+      color: #FFFFFF;
+      transition: 0.1s; }
+
+  @media (max-width: 800px) {
+    .links {
+      max-width: none; 
+    position: relative;
+    left: 5vw;
+    } }
 
 
 .credit {
