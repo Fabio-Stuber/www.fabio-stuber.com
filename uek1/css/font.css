@@ -1,0 +1,96 @@
+* {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-size-adjust: 1;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 30px 0px -20px 0px;
+  text-align: center;
+}
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 30px 0px -10px 0px;
+}
+
+article h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 30px 0px -20px 0px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 200;
+  margin: 10px 0px 10px 0px;
+}
+
+a {
+  font-size: 20px;
+  font-weight: 200;
+  color: #000;
+}
+
+a:hover {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+
+.btn {
+  border: none;
+  border-radius: 15px;
+  color: white;
+  background-color: #0f92e4;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition: 0.5s;
+  font-weight: 200;
+}
+
+.btn:hover {
+  border: none;
+  border-radius: 15px;
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+}
+
+::selection {
+  color: white;
+  background: #2b96b2;
+}
+
+.footer ::selection {
+  background: white;
+  color: #2b96b2;
+}
+
+Main h1::first-letter,
+Main h2::first-letter,
+Main h3::first-letter,
+Main h4::first-letter,
+Main h5::first-letter,
+Main h6::first-letter {
+  color: #97d6e6;
+  font-size: 150%;
+}
