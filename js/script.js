@@ -113,10 +113,37 @@ function initCookieScripts() {
             banner.classList.remove("hidden");
         }
 
+        // In deiner js/script.js bei initCookieScripts():
         acceptBtn.addEventListener("click", function () {
             localStorage.setItem("cookieBannerDecision", "accepted");
             banner.classList.add("hidden");
+            loadGoogleAnalytics(); // Startet Google Analytics nach Zustimmung
         });
+
+        // Wenn die Entscheidung schon früher "accepted" war, direkt laden:
+        if (localStorage.getItem("cookieBannerDecision") === "accepted") {
+            loadGoogleAnalytics();
+        }
+
+        // Neue Funktion zum dynamischen Laden von Google Analytics
+        function loadGoogleAnalytics() {
+            // Ersetze 'G-XXXXXXXXXX' mit deiner echten Google Analytics ID
+            const gaId = 'G-8D4W3TJ3YZ';
+
+            const script1 = document.createElement('script');
+            script1.async = true;
+            script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+            document.head.appendChild(script1);
+
+            const script2 = document.createElement('script');
+            script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${gaId}', { 'anonymize_ip': true });
+    `;
+            document.head.appendChild(script2);
+        }
 
         declineBtn.addEventListener("click", function () {
             localStorage.setItem("cookieBannerDecision", "declined");
