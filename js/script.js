@@ -131,12 +131,14 @@ function initDynamicBackground() {
 
     const colors = ['text-teal-400', 'text-white', 'text-teal-500', 'text-gray-500', 'text-teal-300', 'text-gray-400'];
 
-    const anzahlDinger = Math.floor(Math.random() * 20) + 100;
+    // Etwas weniger Elemente (z.B. 40-70) reichen oft fuer einen tollen Effekt und sparen viel Leistung
+    const anzahlDinger = Math.floor(Math.random() * 30) + 40;
     const parallaxElemente = [];
 
     for (let i = 0; i < anzahlDinger; i++) {
         const shape = document.createElement('div');
-        shape.className = 'absolute transition-opacity duration-300';
+        // 'will-change' sagt dem Browser, dass dieses Teil sich bewegen wird -> schaltet den Turbo ein
+        shape.className = 'absolute transition-opacity duration-300 will-change-transform';
         shape.textContent = '⭓';
 
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -153,7 +155,7 @@ function initDynamicBackground() {
         shape.style.top = randomTop + '%';
         shape.style.left = randomLeft + '%';
         shape.style.fontSize = randomSize + 'rem';
-        shape.style.transform = `rotate(${startRotation}deg)`;
+        shape.style.transform = `translate3d(0, 0, 0) rotate(${startRotation}deg)`;
 
         bgContainer.appendChild(shape);
 
@@ -167,22 +169,16 @@ function initDynamicBackground() {
 
     document.body.appendChild(bgContainer);
 
+    // Optimiertes Scrollen
     window.addEventListener('scroll', () => {
         const scrollAbstand = window.scrollY;
 
         parallaxElemente.forEach(punkt => {
-
             const bewegung = scrollAbstand * punkt.speed * 0.4;
             const drehung = punkt.startRot + (scrollAbstand * punkt.rotSpeed);
 
-            punkt.element.style.transform = `translateY(${bewegung}px) rotate(${drehung}deg)`;
-
-            const aktuellePosition = punkt.element.getBoundingClientRect().top;
-            if (aktuellePosition < -100 || aktuellePosition > window.innerHeight + 100) {
-                punkt.element.style.opacity = "0";
-            } else {
-                punkt.element.style.opacity = "1";
-            }
+            // 'translate3d' nutzt die Grafikkarte des Rechners, das laeuft viel fluessiger
+            punkt.element.style.transform = `translate3d(0, ${bewegung}px, 0) rotate(${drehung}deg)`;
         });
     });
 }
