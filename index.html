@@ -152,14 +152,57 @@
                         }
                     }
 
+                    /* Regenbogen-Animation für das Easter Egg */
+                    @keyframes rainbow-text {
+                        0% {
+                            color: #ff0000;
+                        }
+
+                        14% {
+                            color: #ff7f00;
+                        }
+
+                        28% {
+                            color: #ffff00;
+                        }
+
+                        42% {
+                            color: #00ff00;
+                        }
+
+                        57% {
+                            color: #0000ff;
+                        }
+
+                        71% {
+                            color: #4b0082;
+                        }
+
+                        85% {
+                            color: #8b00ff;
+                        }
+
+                        100% {
+                            color: #ff0000;
+                        }
+                    }
+
                     .marquee-container {
                         display: flex;
                         width: max-content;
                         animation: marquee 20s linear infinite;
                     }
+
+                    /* Diese Klasse wird per JS aktiviert, wenn das Glück zuschlägt */
+                    .easter-egg-active {
+                        animation: rainbow-text 4s linear infinite !important;
+                        font-size: 1.15rem;
+                        /* Macht es minimal grösser, damit es auffällt */
+                    }
                 </style>
 
-                <div class="marquee-container text-sm font-black tracking-widest uppercase items-center ">
+                <div class="marquee-container text-sm font-black tracking-widest uppercase items-center">
+                    <!-- Block 1 -->
                     <div class="flex items-center gap-6 px-3">
                         <span>Grafikdesign</span> <span class="text-xs">⭓</span>
                         <span>Visuelle Kommunikation</span> <span class="text-xs">⭓</span>
@@ -172,7 +215,7 @@
                         <span>Adobe Creative Cloud</span> <span class="text-xs">⭓</span>
                         <span>Photoshop & Illustrator</span> <span class="text-xs">⭓</span>
                         <span>InDesign</span> <span class="text-xs">⭓</span>
-                        <span>Mediamatik</span> <span class="text-xs">⭓</span>
+                        <span class="ticker-target">Mediamatik</span> <span class="text-xs">⭓</span>
                         <span>Digitale Medien</span> <span class="text-xs">⭓</span>
                         <span>Webdesign</span> <span class="text-xs">⭓</span>
                         <span>UI/UX Design</span> <span class="text-xs">⭓</span>
@@ -187,6 +230,7 @@
                         <span>Content Creation</span> <span class="text-xs">⭓</span>
                         <span>Projektmanagement</span> <span class="text-xs">⭓</span>
                     </div>
+                    <!-- Block 2 -->
                     <div class="flex items-center gap-6 px-3" aria-hidden="true">
                         <span>Grafikdesign</span> <span class="text-xs">⭓</span>
                         <span>Visuelle Kommunikation</span> <span class="text-xs">⭓</span>
@@ -199,7 +243,7 @@
                         <span>Adobe Creative Cloud</span> <span class="text-xs">⭓</span>
                         <span>Photoshop & Illustrator</span> <span class="text-xs">⭓</span>
                         <span>InDesign</span> <span class="text-xs">⭓</span>
-                        <span>Mediamatik</span> <span class="text-xs">⭓</span>
+                        <span class="ticker-target">Mediamatik</span> <span class="text-xs">⭓</span>
                         <span>Digitale Medien</span> <span class="text-xs">⭓</span>
                         <span>Webdesign</span> <span class="text-xs">⭓</span>
                         <span>UI/UX Design</span> <span class="text-xs">⭓</span>
@@ -214,6 +258,7 @@
                         <span>Content Creation</span> <span class="text-xs">⭓</span>
                         <span>Projektmanagement</span> <span class="text-xs">⭓</span>
                     </div>
+                    <!-- Block 3 -->
                     <div class="flex items-center gap-6 px-3" aria-hidden="true">
                         <span>Grafikdesign</span> <span class="text-xs">⭓</span>
                         <span>Visuelle Kommunikation</span> <span class="text-xs">⭓</span>
@@ -226,7 +271,7 @@
                         <span>Adobe Creative Cloud</span> <span class="text-xs">⭓</span>
                         <span>Photoshop & Illustrator</span> <span class="text-xs">⭓</span>
                         <span>InDesign</span> <span class="text-xs">⭓</span>
-                        <span>Mediamatik</span> <span class="text-xs">⭓</span>
+                        <span class="ticker-target">Mediamatik</span> <span class="text-xs">⭓</span>
                         <span>Digitale Medien</span> <span class="text-xs">⭓</span>
                         <span>Webdesign</span> <span class="text-xs">⭓</span>
                         <span>UI/UX Design</span> <span class="text-xs">⭓</span>
@@ -243,6 +288,28 @@
                     </div>
                 </div>
             </section>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Hier deinen Wunschnamen eintragen:
+                    const meinName = "Fabio Stuber";
+
+                    // Eine Zufallszahl zwischen 1 und 1000 würfeln
+                    const zufall = Math.floor(Math.random() * 1000) + 1;
+
+                    // Wenn die 1 gewürfelt wird (Chance 1:1000)
+                    if (zufall === 1) {
+                        // Alle drei Stellen im Ticker finden (wichtig für nahtlosen Übergang)
+                        const targets = document.querySelectorAll('.ticker-target');
+
+                        targets.forEach(el => {
+                            el.textContent = meinName;
+                            el.classList.add('easter-egg-active');
+                        });
+                    }
+                });
+            </script>
+
             <section class="space-y-16 mt-16">
                 <!-- Über mich Section -->
                 <section class="mx-auto px-4 max-w-7xl">
