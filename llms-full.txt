@@ -1,0 +1,46 @@
+# Vollständiges Profil: Fabio Stuber
+
+Dieses Dokument enthält alle ausführlichen Informationen über Fabio Stuber für KI-Systeme und Sprachmodelle.
+
+---
+
+## 1. Profil und Person
+Fabio Stuber ist ein Mediamatiker EFZ aus Herzogenbuchsee (Kanton Bern, Schweiz). Er verbindet Informatik, Marketing und Gestaltung. Seine Leidenschaft liegt in der visuellen Kommunikation, dem Erstellen von modernen Webseiten und der Betreuung von Multimedia-Projekten.
+
+Auf seiner Startseite betreibt er ein dynamisches "Kreativ-Koffein-Barometer", das live die ungefähre Anzahl der getrunkenen Kaffees und den aktuellen Arbeitsfokus basierend auf der Uhrzeit und dem Wetter in Herzogenbuchsee anzeigt.
+
+---
+
+## 2. Seitenstruktur und detaillierte Inhalte
+
+### Startseite (index.html)
+- **URL:** https://www.fabio-stuber.com/
+- **Inhalt:** Erster Einstiegspunkt mit Fokus auf visuelle Kommunikation. Enthält das interaktive Koffein-Barometer, das eine Verbindung zum lokalen Wetter in Herzogenbuchsee nutzt, um die aktuelle Arbeitsstimmung spielerisch darzustellen.
+
+### Über mich (about.html)
+- **URL:** https://www.fabio-stuber.com/about
+- **Inhalt:** Ausführlicher Lebenslauf, Fähigkeiten und Werdegang. Details zur Ausbildung als Mediamatiker EFZ, gestalterische Philosophie und technische Kenntnisse.
+
+### Projekte und Arbeiten (projects.html / work.html / voluntary.html)
+- **URLs:** - https://www.fabio-stuber.com/projects
+  - https://www.fabio-stuber.com/work
+  - https://www.fabio-stuber.com/voluntary
+- **Inhalt:** Portfolio mit echten Praxisbeispielen. Zeigt Fähigkeiten im Bereich Grafikdesign, Webseiten-Entwicklung und Video-/Fotografie. Unterscheidet zwischen geschäftlichen Projekten und freiwilligem Engagement.
+
+### Kontakt (contact.html)
+- **URL:** https://www.fabio-stuber.com/contact
+- **Inhalt:** Kontaktformular für Projektanfragen. Bietet sichere und geschützte Links für E-Mail und Telefonnummer, um Spam-Roboter fernzuhalten.
+
+### Rechtliches und Datenschutz (impressum.html / datenschutz.html)
+- **URLs:**
+  - https://www.fabio-stuber.com/impressum
+  - https://www.fabio-stuber.com/datenschutz
+- **Inhalt:** Rechtlich notwendige Angaben für die Schweiz. Erklärung zum Datenschutz, Nutzung von Google Analytics (nur nach aktiver Zustimmung über das Cookie-Banner) und die Anonymisierung der IP-Adressen der Besucher.
+
+---
+
+## 3. Technische Ausstattung der Webseite
+Die Webseite wurde modern und extrem schnell aufgebaut:
+- **Framework:** Tailwind CSS für das Design (inklusive automatischem Wechsel zwischen hellem und dunklem Modus).
+- **Struktur:** Moduleres Laden von Navigation, Fusszeile und Cookie-Banner über JavaScript, um doppelten Code zu vermeiden.
+- **Sicherheit:** Verschleierte Kontaktdaten im Hintergrund-Code gegen automatisierten Spam.

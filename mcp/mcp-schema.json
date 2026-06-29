@@ -1,0 +1,20 @@
+{
+  "mcpVersion": "1.0.0",
+  "name": "Fabio Stuber - Mediamatik & Portfolio API",
+  "version": "1.0.0",
+  "description": "Statische MCP-Ressourcen für das Portfolio von Fabio Stuber (Mediamatiker EFZ).",
+  "resources": [
+    {
+      "uri": "https://www.fabio-stuber.com/mcp/profile.json",
+      "name": "Fabio Stuber Profil",
+      "mimeType": "application/json",
+      "description": "Detaillierte Profildaten, Fähigkeiten und berufliche Stationen von Fabio Stuber."
+    },
+    {
+      "uri": "https://www.fabio-stuber.com/mcp/projects.json",
+      "name": "Projekt-Übersicht",
+      "mimeType": "application/json",
+      "description": "Liste der von Fabio Stuber umgesetzten Web- und Designprojekte."
+    }
+  ]
+}

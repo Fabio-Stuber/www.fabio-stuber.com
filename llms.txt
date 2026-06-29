@@ -1,0 +1,22 @@
+# Fabio Stuber
+
+Informationen über Fabio Stuber, Mediamatiker EFZ aus Herzogenbuchsee, Schweiz. Spezialisiert auf visuelle Kommunikation, Webdesign, Multimedia-Projekte und Events.
+
+## Kernkompetenzen
+- Webdesign und Webentwicklung (HTML, CSS, JavaScript, Tailwind CSS)
+- Visuelle Kommunikation und Grafikdesign
+- Multimedia-Produktion und Event-Vorbereitungen
+
+## Hauptseiten
+- [Startseite](https://www.fabio-stuber.com/): Hauptseite mit persönlicher Vorstellung und dem interaktiven Kreativ-Koffein-Barometer.
+- [Über mich](https://www.fabio-stuber.com/about): Werdegang, Fähigkeiten und Details zur Ausbildung als Mediamatiker.
+- [Projekte & Arbeiten](https://www.fabio-stuber.com/projects): Übersicht über gestalterische und technische Projekte.
+- [Kontakt](https://www.fabio-stuber.com/contact): Kontaktmöglichkeiten und Anfrageformular für Zusammenarbeit.
+
+## Weitere Seiten
+- [Arbeit (Work)](https://www.fabio-stuber.com/work): Einblicke in berufliche Projekte.
+- [Freiwilligenarbeit (Voluntary)](https://www.fabio-stuber.com/voluntary): Engagement und gemeinnützige Projekte.
+- [Inside](https://www.fabio-stuber.com/inside): Hintergrundinformationen und Einblicke.
+- [In deiner Nähe](https://www.fabio-stuber.com/in-deiner-naehe): Regionale Angebote und Infos.
+- [Impressum](https://www.fabio-stuber.com/impressum): Rechtliche Informationen zur Webseite.
+- [Datenschutz](https://www.fabio-stuber.com/datenschutz): Informationen zum Umgang mit Daten und dem Cookie-Banner.

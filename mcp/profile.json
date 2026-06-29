@@ -1,0 +1,35 @@
+{
+  "person": {
+    "name": "Fabio Stuber",
+    "beruf": "Mediamatiker EFZ & Logistiker EFZ",
+    "wohnort": "Herzogenbuchsee, Schweiz",
+    "geburtsjahr": 2001
+  },
+  "kontakt": {
+    "webseite": "https://www.fabio-stuber.com",
+    "linkedin": "https://www.linkedin.com/in/fabio-stuber"
+  },
+  "faehigkeiten": {
+    "design_software": ["Photoshop", "Illustrator", "InDesign", "Adobe Creative Cloud"],
+    "webentwicklung": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "cms_systeme": ["WordPress", "Typo3", "Google Sites", "Squarespace", "Wix"],
+    "multimedia": ["Fotografie", "Videografie", "Drohnenaufnahmen", "Veranstaltungstechnik"]
+  },
+  "stationen": [
+    {
+      "zeitraum": "11/2025 - 02/2026",
+      "firma": "GREEN IT SOLUTIONS",
+      "rolle": "Technik- & Kommunikation Koordinator"
+    },
+    {
+      "zeitraum": "2021 - 2025",
+      "firma": "FISCHER AG Präzisionsspindeln",
+      "rolle": "Ausbildung zum Mediamatiker EFZ"
+    },
+    {
+      "zeitraum": "2018 - 2021",
+      "firma": "FISCHER AG Präzisionsspindeln",
+      "rolle": "Ausbildung zum Logistiker EFZ"
+    }
+  ]
+}

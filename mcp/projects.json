@@ -1,0 +1,32 @@
+{
+  "projekte": [
+    {
+      "name": "Joker's Pub",
+      "typ": "Webauftritt & Social Media",
+      "technologien": ["Google Sites", "HTML", "CSS", "JavaScript"],
+      "beschreibung": "Neuaufbau der Webseite für das Joker's Pub in Herzogenbuchsee inklusive digitaler Getränkekarte und einem vollautomatischen Live-Spielplan für die WM 2026.",
+      "link": "https://www.jokers-pub.ch/"
+    },
+    {
+      "name": "BLESS BERN",
+      "typ": "Webauftritt (Relaunch)",
+      "technologien": ["WordPress", "HTML", "CSS", "JavaScript"],
+      "beschreibung": "Komplette Überarbeitung des Webseiten-Auftritts für die kirchenübergreifende Bewegung junger Erwachsener in Bern mit Fokus auf intuitive User Experience.",
+      "link": "https://www.blessbern.ch/"
+    },
+    {
+      "name": "FOUR ELEMENTS",
+      "typ": "Webauftritt & Social Media",
+      "technologien": ["Google Sites", "Google Workspace", "Instagram"],
+      "beschreibung": "Neugestaltung der zentralen Anlaufstelle und Anmeldeplattform für das Frühlingslager für Jugendliche im Oberaargau und Emmental.",
+      "link": "https://www.fourelements.info/"
+    },
+    {
+      "name": "WAGNER HOMEBREW",
+      "typ": "Webauftritt",
+      "technologien": ["Google Sites"],
+      "beschreibung": "Erstellung eines modernen Online-Auftritts mit integrierter Produktpalette für eine Ein-Mann-Brauerei in Inkwil.",
+      "link": "https://www.wagnerhomebrew.ch/"
+    }
+  ]
+}

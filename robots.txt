@@ -1,0 +1,35 @@
+# 1. Erlaubt allen normalen Suchmaschinen und KI-Suchbots das Lesen der Seite
+User-agent: *
+Allow: /
+
+# 2. Verbietet den wichtigsten KI-Firmen das Nutzen der Inhalte für KI-Training
+User-agent: GPTBot
+Disallow: /
+Noindex: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Hier zeigen wir den Suchmaschinen, wo dein Inhaltsverzeichnis liegt
+Sitemap: https://www.fabio-stuber.com/sitemap.xml
