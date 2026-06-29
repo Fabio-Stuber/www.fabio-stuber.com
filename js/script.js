@@ -16,16 +16,21 @@ fetch('elements/navigation.html')
 
         const banner = document.getElementById('relaunchBanner');
 
+        const banner = document.getElementById('relaunchBanner');
+
         if (banner) {
             const vonAnfangAnVersteckt = banner.classList.contains('hidden');
 
             window.addEventListener('scroll', () => {
-
                 if (vonAnfangAnVersteckt) return;
 
-                if (window.scrollY > 60) {
+                const scrollPosition = Math.max(0, window.scrollY);
+
+
+                if (scrollPosition > 100) {
                     banner.classList.add('hidden');
-                } else if (window.scrollY < 30) {
+                } else if (scrollPosition < 10) {
+
                     banner.classList.remove('hidden');
                 }
             });
