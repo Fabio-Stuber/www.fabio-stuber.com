@@ -13,28 +13,6 @@ fetch('elements/navigation.html')
         const navContainer = document.getElementById('navigation');
         navContainer.innerHTML = data;
         navContainer.classList.add('sticky', 'top-0', 'z-50', 'shadow-sm');
-
-        const banner = document.getElementById('relaunchBanner');
-
-        const banner = document.getElementById('relaunchBanner');
-
-        if (banner) {
-            const vonAnfangAnVersteckt = banner.classList.contains('hidden');
-
-            window.addEventListener('scroll', () => {
-                if (vonAnfangAnVersteckt) return;
-
-                const scrollPosition = Math.max(0, window.scrollY);
-
-
-                if (scrollPosition > 100) {
-                    banner.classList.add('hidden');
-                } else if (scrollPosition < 10) {
-
-                    banner.classList.remove('hidden');
-                }
-            });
-        }
         initHeaderScripts();
     });
 
