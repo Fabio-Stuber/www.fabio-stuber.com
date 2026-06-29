@@ -13,6 +13,23 @@ fetch('elements/navigation.html')
         const navContainer = document.getElementById('navigation');
         navContainer.innerHTML = data;
         navContainer.classList.add('sticky', 'top-0', 'z-50', 'shadow-sm');
+
+        const banner = document.getElementById('relaunchBanner');
+
+        if (banner) {
+            const vonAnfangAnVersteckt = banner.classList.contains('hidden');
+
+            window.addEventListener('scroll', () => {
+
+                if (vonAnfangAnVersteckt) return;
+
+                if (window.scrollY > 60) {
+                    banner.classList.add('hidden');
+                } else if (window.scrollY < 30) {
+                    banner.classList.remove('hidden');
+                }
+            });
+        }
         initHeaderScripts();
     });
 
@@ -309,14 +326,11 @@ function initKoffeinBarometer() {
             statusText += ` Wegen dem heutigen Wetter (${beschreibung}) gibt es heute einen automatischen Extra-Koffein-Bonus!`;
         }
 
-        // Werte in die HTML-Karte schreiben
         coffeeCountEl.textContent = `${kaffees} Tassen Kaffee`;
         kreativStatusEl.textContent = statusText;
     }
 }
 
-// Funktion beim Laden der Seite ausfuehren
 document.addEventListener("DOMContentLoaded", () => {
-    // Deine bestehenden Funktionen (initDynamicBackground, etc.) koennen hier bleiben
     initKoffeinBarometer();
 });
