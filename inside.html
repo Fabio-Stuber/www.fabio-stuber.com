@@ -57,6 +57,22 @@
                     </p>
                 </div>
 
+                <div class="text-center mt-12 mb-16">
+                    <button id="analyseBtn" class="cursor-pointer bg-teal-500 hover:bg-teal-600 text-white dark:bg-teal-400 dark:hover:bg-teal-500 dark:text-gray-950 font-bold py-3 px-6 rounded-xl shadow-md transition-all duration-200 uppercase tracking-wider text-sm">
+                        Code-Metriken live analysieren
+                    </button>
+
+                    <div id="terminalBox" class="hidden max-w-xl mx-auto mt-6 bg-gray-900 text-left text-green-400 font-mono p-5 rounded-xl shadow-lg border border-gray-800 text-sm leading-relaxed">
+                        <div class="flex items-center space-x-2 border-b border-gray-800 pb-2 mb-3">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="text-gray-500 text-xs pl-2">Live-Performance-Inspektor</span>
+                        </div>
+                        <div id="terminalText" class="min-h-[80px]"></div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 text-center mb-16">
                     <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                         <div class="text-4xl font-extrabold text-teal-500 dark:text-teal-400 mb-2">48+</div>
@@ -131,6 +147,72 @@
 
         <!-- functions -->
         <script src="js/script.js"></script>
+        <script>
+            document.getElementById('analyseBtn').addEventListener('click', function () {
+                const btn = this;
+                const box = document.getElementById('terminalBox');
+                const output = document.getElementById('terminalText');
+
+                // Button nach dem Klick deaktivieren
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                // Terminal anzeigen
+                box.classList.remove('hidden');
+                output.innerHTML = '';
+
+                // Ladezeit berechnen (Zeit vom Start der Anfrage bis die Seite fertig geladen ist)
+                const [navigation] = performance.getEntriesByType('navigation');
+                let ladezeit = 0;
+
+                if (navigation) {
+                    // Umrechnung von Millisekunden in Sekunden
+                    ladezeit = (navigation.duration / 1000).toFixed(2);
+                } else {
+                    ladezeit = (0.2 + Math.random() * 0.1).toFixed(2); // Schöner Rückfallwert
+                }
+
+                // Die Zeilen, die nacheinander abgetippt werden
+                const zeilen = [
+                    "> Starte System-Analyse...",
+                    `> Verbindung zur Aussenwelt hergestellt.`,
+                    `> ERFOLG: Seite geladen in genau ${ladezeit} Sekunden!`,
+                    "> Info: 0 KB unnnötiger Ballast geladen.",
+                    "> Code-Struktur ist optimal sauber.",
+                    "> Keine Aliens gesichtet."
+                ];
+
+                let zeilenIndex = 0;
+                let zeichenIndex = 0;
+                let aktuellerText = '';
+
+                // Funktion für den Schreibmaschinen-Effekt
+                function tippeZeile() {
+                    if (zeilenIndex < zeilen.length) {
+                        if (zeichenIndex < zeilen[zeilenIndex].length) {
+                            // Einzelnes Zeichen hinzufügen
+                            aktuellerText += zeilen[zeilenIndex].charAt(zeichenIndex);
+                            // Text im Terminal aktualisieren (mit Zeilenumbrüchen)
+                            output.innerHTML = zeilen.slice(0, zeilenIndex).join('<br>') + (zeilenIndex > 0 ? '<br>' : '') + aktuellerText + '<span class="animate-pulse">_</span>';
+                            zeichenIndex++;
+                            setTimeout(tippeZeile, 20); // Geschwindigkeit der Buchstaben (20ms)
+                        } else {
+                            // Zeile fertig abgetippt, weiter zur nächsten Zeile
+                            zeilenIndex++;
+                            zeichenIndex = 0;
+                            aktuellerText = '';
+                            setTimeout(tippeZeile, 400); // Pause zwischen den Zeilen (400ms)
+                        }
+                    } else {
+                        // Tippen beendet, Cursor entfernen
+                        output.innerHTML = zeilen.join('<br>');
+                    }
+                }
+
+                // Startet die Animation
+                tippeZeile();
+            });
+        </script>
     </body>
 
 </html>

@@ -306,7 +306,7 @@ function initKoffeinBarometer() {
         }
 
         if (bonus > 0) {
-            statusText += ` Wegen dem aktuellen Wetter (${beschreibung}) gibt es heute einen automatischen Extra-Koffein-Bonus!`;
+            statusText += ` Wegen dem heutigen Wetter (${beschreibung}) gibt es heute einen automatischen Extra-Koffein-Bonus!`;
         }
 
         // Werte in die HTML-Karte schreiben
