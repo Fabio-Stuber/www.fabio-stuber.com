@@ -85,7 +85,7 @@
             <!-- Hero Section -->
             <section class="no-copy relative min-h-[calc(100vh-4rem)] flex items-center bg-gray-900 overflow-hidden">
                 <div class="absolute inset-0 z-0">
-                    <img src="img/Background-FabioStuber.jpg" alt="Hintergrund" class="w-full h-full object-cover opacity-40 dark:opacity-30 scale-105 animate-pulse" style="animation-duration: 10s;">
+                    <img id="hero-bg" src="img/Background-FabioStuber.jpg" alt="Hintergrund" class="w-full h-full object-cover opacity-40 dark:opacity-30 scale-110 transition-transform duration-75 ease-out">
                     <div class="absolute inset-0 bg-linear-to-r from-gray-950/90 via-gray-900/60 to-transparent"></div>
                 </div>
 
@@ -303,6 +303,15 @@
                             el.classList.add('easter-egg-active');
                         });
                     }
+                });
+
+                document.addEventListener("scroll", function () {
+                    const bgImage = document.getElementById("hero-bg");
+                    if (!bgImage) return;
+
+                    let scrollPosition = window.scrollY;
+
+                    bgImage.style.transform = `translateY(${scrollPosition * 0.25}px)`;
                 });
             </script>
 
