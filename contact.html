@@ -99,6 +99,24 @@
                         </div>
                     </section>
 
+                    <section id="success-section" class="hidden bg-emerald-500/10 border border-emerald-500/20 dark:border-emerald-500/10 rounded-xl p-6 md:py-8 text-center relative overflow-hidden group">
+
+                        <div class="absolute -right-8 -top-8 text-emerald-500/10 dark:text-emerald-400/5 text-9xl font-black select-none pointer-events-none transition-transform duration-500 group-hover:scale-110">
+                            ⭓
+                        </div>
+
+                        <div class="relative z-10 space-y-2">
+                            <div class="text-emerald-500 text-3xl">✓</div>
+                            <h2 class="text-xl font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-tight">
+                                Formular erfolgreich eingereicht!
+                            </h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 font-sans max-w-md mx-auto">
+                                Vielen Dank für deine Nachricht. Ich habe deine Anfrage erhalten und werde mich so schnell wie möglich bei dir melden.
+                            </p>
+                        </div>
+
+                    </section>
+
                     <section class="bg-gray-100 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/50 rounded-xl p-6 md:p-10 hover:border-teal-500/20 dark:hover:border-teal-400/20 transition duration-300 relative overflow-hidden group">
                         <!-- Hintergrund-Icon -->
                         <div class="absolute -right-8 -top-8 text-gray-200 dark:text-gray-800/40 text-9xl font-black select-none pointer-events-none transition-transform duration-500 group-hover:scale-110">⭓</div>
@@ -117,7 +135,7 @@
                         <div class="relative z-10">
                             <!-- Formular mit der benutzerdefinierten Gruppe 'group/form' -->
                             <form action="https://formsubmit.co/info@fabio-stuber.com" method="POST" id="form" class="space-y-8 group/form" novalidate>
-                                <input type="hidden" name="_next" value="https://www.fabio-stuber.com/contact" />
+                                <input type="hidden" name="_next" value="https://www.fabio-stuber.com/contact?success=true" />
                                 <input type="hidden" name="_template" value="basic" />
                                 <input type="hidden" name="_captcha" value="false" />
                                 <input type="hidden" name="_subject" value="KONTAKT FORMULAR" />
@@ -178,14 +196,10 @@
                         const message = document.getElementById("message");
 
                         form.onsubmit = function (e) {
-                            // Fuegt die Klasse hinzu, damit ungueltige Felder rot werden
                             form.classList.add("submitted");
 
-                            // Wenn das Formular nicht gueltig ausgefuellt ist, stoppen wir das Absenden
                             if (!form.checkValidity()) {
                                 e.preventDefault();
-
-                                // Setzt den Fokus auf das erste fehlerhafte Feld
                                 const firstInvalid = form.querySelector(":invalid");
                                 if (firstInvalid) {
                                     firstInvalid.focus();
@@ -193,10 +207,21 @@
                                 return false;
                             }
 
-                            // Wenn alles passt, wird das Formular wie gewohnt abgeschickt und die Lade-Nachricht angezeigt
                             form.classList.add("hidden");
                             message.classList.remove("hidden");
                         };
+
+                        // NEU: Auswertung nach dem Neuladen der Seite
+                        window.addEventListener("DOMContentLoaded", () => {
+                            const urlParams = new URLSearchParams(window.location.search);
+                            if (urlParams.get("success") === "true") {
+                                const successSection = document.getElementById("success-section");
+                                if (successSection) {
+                                    successSection.classList.remove("hidden");
+                                    successSection.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }
+                        });
                     </script>
 
                     <section class="bg-gray-100 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/50 rounded-xl p-6 hover:border-teal-500/20 dark:hover:border-teal-400/20 transition duration-300 relative overflow-hidden group flex flex-col justify-between">
