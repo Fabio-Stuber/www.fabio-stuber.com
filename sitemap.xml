@@ -161,12 +161,4 @@
     <priority>0.30</priority>
   </url>
 
-<url>
-    <loc>https://www.fabio-stuber.com/blog/mein-erster-beitrag.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-
 </urlset>
